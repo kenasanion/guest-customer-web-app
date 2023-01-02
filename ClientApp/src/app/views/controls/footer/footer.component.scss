@@ -1,0 +1,104 @@
+@import '../../../../variables.scss';
+
+footer {
+    background: rgb(210, 210, 210);
+
+    .back-to-top {
+        cursor: pointer;
+        padding-top: 10px;
+        padding-bottom: 2em;
+
+        @include constraint-layout-landing-page();
+    }
+
+    .footer-details {
+        min-height: 200px;
+        padding: 0 4em 4em 4em;
+        color: black;
+
+        display: flex;
+        flex-direction: row;
+
+        @include constraint-layout-landing-page();
+
+        @include media(tablet) {
+            padding: 0 3em 3em 3em;
+            flex-direction: column;
+        }
+
+        @include media(mobile) {
+            div:not(:last-child) {
+                margin-bottom: 3em;
+            }
+        }
+
+        .logo-container {
+            margin-right: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 2;
+
+            .footer-logo {
+                width: 300px;
+                height: 250px;
+                background-image: url('../../../../assets/images/Guest_Primary_Logo.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .links-container {
+            margin-right: 1em;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+
+            .navigation-links {
+                .navigation-link {
+                    margin-bottom: 1.5em;
+                }
+            }
+
+            .social-media-links {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .social-media-icon {
+                    width: 45px;
+                    height: 45px;
+                    background-color: $gapp-red-color;
+                    border-radius: 100%;
+                    margin-left: 1.2em;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .footnote-section {
+        font-size: 18px;
+        padding: 20px;
+        background-color: rgb(160, 160, 160);
+
+        .footnote {
+            @include align-justify-center();
+            @include constraint-layout-landing-page();
+
+            @include media(tablet) {
+                flex-direction: column;
+            }
+
+            .footnote-links {
+                a:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

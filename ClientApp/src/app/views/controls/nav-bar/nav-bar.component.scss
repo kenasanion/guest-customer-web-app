@@ -1,0 +1,68 @@
+@import '../../../../variables.scss';
+
+$navbar-border-radius: 5px;
+
+.navbar-container {
+    height: 75px;
+    background-color: $gapp-red-color;
+    border-radius: $navbar-border-radius;
+    border: 0;
+    color: white;
+
+    @include constraint-layout-landing-page();
+    @include align-justify-center();
+
+    margin-top: 20px;
+
+    @include media(mobile) {
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    .brand-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-image: url('../../../../assets/images/Guest_White_Logo.png');
+
+            @include image-fit();
+        }
+
+        .brand-text {
+            text-transform: uppercase;
+            margin-top: 12px;
+
+            @include itsmorefuninthephilippinesfont();
+        }
+    }
+
+    .navigation-items {
+        @include align-justify-center();
+        height: 100%;
+        background-color: $gapp-orange-color;
+        border-top-right-radius: $navbar-border-radius;
+        border-bottom-right-radius: $navbar-border-radius;
+
+        @include media(mobile) {
+            border-top-right-radius: $navbar-border-radius;
+            border-bottom-right-radius: $navbar-border-radius;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            height: 100%;
+
+            @include align-items-center();
+        }
+
+        .nav-link:hover {
+            background-color: #FFFFFF20;
+        }
+    }
+}

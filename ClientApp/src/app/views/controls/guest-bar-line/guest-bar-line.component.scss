@@ -1,0 +1,40 @@
+@import '../../../../variables.scss';
+
+.guest-bar-line {
+    display: flex;
+    justify-content: flex-end;
+
+    background-color: $gapp-red-color;
+    height: 5px;
+    width: 100%;
+
+    .guest-blue {
+        width: 7%;
+        height: 5px;
+        background-color: $gapp-blue-color;
+    }
+
+    .guest-orange {
+        width: 7%;
+        height: 5px;
+        background-color: $gapp-orange-color;
+    }
+
+    .guest-green {
+        width: 7%;
+        height: 5px;
+        background-color: $gapp-green-color;
+    }
+
+    .guest-yellow {
+        width: 7%;
+        height: 5px;
+        background-color: $gapp-yellow-color;
+    }
+
+    .guest-red {
+        width: 7%;
+        height: 5px;
+        background-color: $gapp-red-color;
+    }
+}

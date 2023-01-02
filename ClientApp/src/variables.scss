@@ -1,0 +1,196 @@
+/* Colors */
+$breakpoint-s: 768px;
+$breakpoint-l: 1280px;
+
+@mixin media($device) {
+  @if $device == mobile {
+      @media only screen and (max-width: $breakpoint-s) { @content; }
+  } @else if $device == tablet {
+      @media only screen and (max-width:  $breakpoint-l) { @content; }
+  } @else {
+      @media only screen and (min-width: calc($breakpoint-l + 1)) { @content; }
+  }
+}
+
+$bg-dark-color: #2e2e2e;
+$fg-dark-color: white;
+$bg-light-color: white;
+$fg-light-color: #2e2e2e;
+
+$login-background-color: #f7f7f7;
+$main-background-color: #f7f7f7;
+
+$field-background-color: $bg-light-color;
+$field-foreground-color: $fg-light-color;
+
+$navbar-background-color: white;
+$navbar-foreground-color: #2B2B2B;
+
+$section-background-color: white;
+$foreground-color: #2B2B2B;
+
+$field-border-color: #f3f3f3;
+$field-disabled-color: #aeaeae;
+
+$accent-color: #E13F2A;
+
+$gapp-red-color: #c62e3a;
+$gapp-green-color: #72be46;
+$gapp-yellow-color: #f7be14;
+$gapp-orange-color: #ef642c;
+$gapp-blue-color: #2b70ac;
+
+$gapp-text-color: #2B2B2B;
+
+/* Fonts */
+@font-face {
+    font-family: "BARABARAFINALRegular";
+    src: url('./assets/fonts/Barabara-Final.otf');
+}
+
+@mixin gappfont() {
+    font-weight: 600 !important;
+    font-style: normal;
+}
+
+@mixin itsmorefuninthephilippinesfont() {
+    font-family: "BARABARAFINALRegular";
+}
+
+$body-font-size-desktop: 1em;
+$body-font-size-mobile: 1em;
+
+$page-banner-height: 400px;
+$page-banner-logo-size: 250px;
+
+$default-field-border-radius: 10px;
+
+$font-size-h1-desktop: 32px;
+$font-size-h2-desktop: 28px;
+$font-size-h3-desktop: 24px;
+$font-size-h4-desktop: 21px;
+$font-size-h5-desktop: 18px;
+$font-size-body-large: 1.3em;
+$font-size-body-regular: 1em;
+$font-size-body-small: .8em;
+
+$font-size-h1-mobile: 2em;
+$font-size-h2-mobile: 1.6em;
+$font-size-h3-mobile: 1.425em;
+$font-size-h4-mobile: 1.2em;
+$font-size-body-large-mobile: 1.2em;
+$font-size-body-regular-mobile: .8em;
+
+h1, h2, h3, h4, h5 {
+    @include gappfont();
+    color: $gapp-text-color;
+}
+
+h1 {
+    font-size: $font-size-h1-desktop;
+}
+
+h2 {
+    font-size: $font-size-h2-desktop;
+}
+
+h3 {
+    font-size: $font-size-h3-desktop;
+}
+
+h4 {
+    font-size: $font-size-h4-desktop;
+}
+
+h5 {
+    font-size: $font-size-h5-desktop;
+}
+
+.section-heading > h5 {
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    font-weight: 800 !important;
+}
+
+/* Sizing */
+$landing-page-max-width: 1280px;
+
+$navbar-height: 70px;
+
+/* Alignment */
+
+@mixin align-justify-center() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin align-items-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-center { margin: 0 auto; }
+
+@mixin constraint-layout {
+    max-width: $landing-page-max-width;
+    margin: 0 auto;
+}
+
+@mixin constraint-layout-landing-page {
+    width: 80%;
+    max-width: $landing-page-max-width;
+    margin: 0 auto;
+
+    @include media(mobile) {
+        width: 100%;
+    }
+}
+
+/* Image */
+
+@mixin image-fit() {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+@mixin image-cover() {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Shadow */
+@mixin panel-shadow() {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+}
+
+/* Misc */
+$grid-gap-standard: 30px;
+$default-border-radius: 10px;
+
+@mixin disable-selection() {
+    -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.no-select { @include disable-selection(); }
+
+/* Rectangle */
+@mixin featured-rect() {
+    background-color: $gapp-red-color;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: $default-border-radius;
+}
