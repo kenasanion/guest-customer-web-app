@@ -5,6 +5,10 @@
     height: 400px;
     @include align-justify-center();
 
+    @include media(mobile) {
+        display: none;
+    }
+
     .panel-red, .panel-yellow  {
         overflow: hidden;
         position: relative;
@@ -15,11 +19,17 @@
 
     .panel-yellow {
         background-color: $gapp-yellow-color;
+
+        .destination {
+            background-image: url('../../../../assets/images/Intramuros_City_Tour.jpg');
+        }
     }
 
     .destination {
         position: absolute;
         top: 0;
+        background-image: url('../../../../assets/images/Manila_Clock_Tower.jpg');
+
         @include image-cover();
 
         height: 100%;
@@ -38,31 +48,6 @@
         top: -20px;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        @include media(tablet) {
-            width: auto;
-            left: 0;
-            right: 0;
-            transform: translate(0%, 0%);
-        }
-
-        .laptop {
-            position: absolute;
-            top: 20px;
-            left: -250px;
-
-            width: 500px;
-            height: 400px;
-            @include image-fit();
-
-            @include media(tablet) {
-                width: 380px;
-                top: -280px;
-                left: 50%;
-                right: 50%;
-                transform: translate(-50%, 0%);
-            }
-        }
 
         .panel-orange {
             border-radius: 5px;
@@ -89,50 +74,87 @@
 
                 padding: 2em;
             }
+        }
 
-            @include media(mobile) {
-                border-radius: 0;
+        .laptop {
+            position: absolute;
+            top: 75px;
+            left: -250px;
+
+            @include media(tablet) {
+                top: -230px;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, 0%);
             }
+        }
+    }
+}
 
-            .panel-orange-container {
-                display: flex;
-                flex-direction: column;
+.dashboard-section-mobile {
+    display: none;
 
-                .dashboard-feature-heading {
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    font-size: 32px;
-                    line-height: 32px;
-                    white-space: pre-line;
-                }
+    .laptop {
+        margin-top: 3em;
+    }
 
-                .dashboard-feature {
-                    margin-top: 2em;
-                    display: flex;
-                    flex-direction: row;
+    .dashboard-feature-container {
+        padding: 3em 3em 0 3em;
+    }
 
-                    .feature-check {
-                        min-width: 30px;
-                        height: 30px;
-                        padding: 10px;
-                        border: 3px solid white;
-                        margin-right: 20px;
-                        border-radius: 100%;
-                        background-color: $gapp-green-color;
-                        color: white;
-                        flex-grow: 1;
+    @include media(mobile) {
+        display: block;
+    }
+}
 
-                        @include align-items-center();
-                    }
+.laptop {
+    width: 500px;
+    height: 300px;
+    background-image: url('../../../../assets/images/Laptop.png');
+    margin: 0 auto;
+    @include image-fit();
 
-                    .feature-text {
-                        .feature-title {
-                            font-weight: 700;
-                            font-size: 21px;
-                            margin-bottom: 10px;
-                        }
-                    }
-                }
+    @include media(tablet) {
+        width: 100%;
+    }
+}
+
+.dashboard-feature-container {
+    display: flex;
+    flex-direction: column;
+
+    .dashboard-feature-heading {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+        white-space: pre-line;
+    }
+
+    .dashboard-feature {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+
+        .feature-check {
+            min-width: 30px;
+            height: 30px;
+            padding: 10px;
+            border: 3px solid white;
+            margin-right: 20px;
+            border-radius: 100%;
+            background-color: $gapp-green-color;
+            color: white;
+            flex-grow: 1;
+
+            @include align-items-center();
+        }
+
+        .feature-text {
+            .feature-title {
+                font-weight: 700;
+                font-size: 21px;
+                margin-bottom: 10px;
             }
         }
     }
