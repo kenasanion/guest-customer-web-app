@@ -140,16 +140,6 @@ $navbar-height: 70px;
     margin: 0 auto;
 }
 
-@mixin constraint-layout-landing-page {
-    width: 80%;
-    max-width: $landing-page-max-width;
-    margin: 0 auto;
-
-    @include media(mobile) {
-        width: 100%;
-    }
-}
-
 /* Image */
 
 @mixin image-fit() {

@@ -10,6 +10,9 @@ import { HomePage } from './views/pages/home-page/home.page';
 import { GuestBarLineComponent } from './views/controls/guest-bar-line/guest-bar-line.component';
 import { NavBarComponent } from './views/controls/nav-bar/nav-bar.component';
 import { FooterComponent } from './views/controls/footer/footer.component';
+import { BenefitsListComponent } from './views/components/guest-benefits-list/guest-benefits-list.component';
+import { GuestDashboardSectionComponent } from './views/components/guest-dashboard-section/guest-dashboard-section.component';
+import { GuestPhoneSectionComponent } from './views/components/guest-phone-section/guest-phone-section.component';
 
 export function getToken() {
   return localStorage.getItem('jwt');
@@ -24,6 +27,9 @@ export function getToken() {
     FooterComponent,
 
     HomePage,
+    GuestPhoneSectionComponent,
+    BenefitsListComponent,
+    GuestDashboardSectionComponent,
   ],
   imports: [
     GAPPSharedModule,

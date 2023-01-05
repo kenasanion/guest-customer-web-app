@@ -1,0 +1,139 @@
+@import '../../../../variables.scss';
+
+.dashboard-section {
+    position: relative; /** For the orange panel with laptop */
+    height: 400px;
+    @include align-justify-center();
+
+    .panel-red, .panel-yellow  {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        width: 50%;
+        background-color: $gapp-red-color;
+    }
+
+    .panel-yellow {
+        background-color: $gapp-yellow-color;
+    }
+
+    .destination {
+        position: absolute;
+        top: 0;
+        @include image-cover();
+
+        height: 100%;
+        width: 800px;
+    }
+
+    /** To accomodate the laptop on mobile screens */
+    margin-top: 5em;
+    @include media(tablet) {
+        margin-top: 20em;
+    }
+
+    .dashboard-details-container {
+        position: absolute;
+        width: 600px;
+        top: -20px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include media(tablet) {
+            width: auto;
+            left: 0;
+            right: 0;
+            transform: translate(0%, 0%);
+        }
+
+        .laptop {
+            position: absolute;
+            top: 20px;
+            left: -250px;
+
+            width: 500px;
+            height: 400px;
+            @include image-fit();
+
+            @include media(tablet) {
+                width: 380px;
+                top: -280px;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, 0%);
+            }
+        }
+
+        .panel-orange {
+            border-radius: 5px;
+            width: 380px;
+            height: 400px;
+
+            padding: 1em 5em 1em 15em;
+
+            text-align: left;
+            background-color: $gapp-orange-color;
+            color: white !important;
+
+            @include align-items-center();
+
+            position: absolute;
+            top: 0;
+
+            @include media(tablet) {
+                width: 420px;
+
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, 0%);
+
+                padding: 2em;
+            }
+
+            @include media(mobile) {
+                border-radius: 0;
+            }
+
+            .panel-orange-container {
+                display: flex;
+                flex-direction: column;
+
+                .dashboard-feature-heading {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 32px;
+                    white-space: pre-line;
+                }
+
+                .dashboard-feature {
+                    margin-top: 2em;
+                    display: flex;
+                    flex-direction: row;
+
+                    .feature-check {
+                        min-width: 30px;
+                        height: 30px;
+                        padding: 10px;
+                        border: 3px solid white;
+                        margin-right: 20px;
+                        border-radius: 100%;
+                        background-color: $gapp-green-color;
+                        color: white;
+                        flex-grow: 1;
+
+                        @include align-items-center();
+                    }
+
+                    .feature-text {
+                        .feature-title {
+                            font-weight: 700;
+                            font-size: 21px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ $navbar-border-radius: 5px;
     border: 0;
     color: white;
 
-    @include constraint-layout-landing-page();
+    @include constraint-layout();
     @include align-justify-center();
 
     margin-top: 20px;
@@ -56,6 +56,8 @@ $navbar-border-radius: 5px;
 
         .nav-link {
             cursor: pointer;
+            padding-left: 1em;
+            padding-right: 1em;
             height: 100%;
 
             @include align-items-center();

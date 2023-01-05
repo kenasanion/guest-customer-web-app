@@ -98,8 +98,6 @@ body {
 }
 
 body {
-  margin: 0;
-  height: 100%;
   background-color: $main-background-color;
   font-family: proxima-nova, sans-serif !important;
   font-weight: 600 !important;
@@ -111,19 +109,3 @@ body {
 .main-container {
   height: 100%;
 }
-
-/* Required 3rd Party Library Stylesheets */
-@import '~bootstrap/scss/bootstrap';
-@import '~ngx-toastr/toastr-bs4-alert';
-
-.mat-dialog-content {
-  overflow: none !important;
-}
-
-.mat-form-field-appearance-fill .mat-form-field-flex,
-.mat-form-field-appearance-outline .mat-form-field-outline {
-  background-color: white;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

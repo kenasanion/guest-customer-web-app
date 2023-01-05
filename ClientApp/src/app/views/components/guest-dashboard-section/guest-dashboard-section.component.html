@@ -1,0 +1,28 @@
+<div class="dashboard-section">
+    <div class="panel-red">
+        <div class="destination" [style.right]="0" [style.background-image]="'url(../../../../assets/images/Manila-Clock-Tower.jpg)'"></div>
+    </div>
+    <div class="panel-yellow">
+        <div class="destination" [style.left]="0" [style.background-image]="'url(../../../../assets/images/Intramuros-City-Tour.jpg)'"></div>
+    </div>
+
+    <div class="dashboard-details-container">
+        <div class="panel-orange">
+            <div class="panel-orange-container">
+                <b><div class="dashboard-feature-heading" [innerHTML]="content.WebDashboardContent.title"></div></b>
+                <div>
+                    <div class="dashboard-feature" *ngFor="let feature of content.WebDashboardContent.features">
+                        <div class="feature-check">
+                            <mat-icon>check</mat-icon>
+                        </div>
+                        <div class="feature-text">
+                            <div class="feature-title">{{feature.key}}</div>
+                            <div class="feature-description">{{feature.description}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="laptop" [style.background-image]="'url(../../../../assets/images/Overview-Dashboard.png)'"></div>
+    </div>
+</div>

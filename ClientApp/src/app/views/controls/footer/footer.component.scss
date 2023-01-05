@@ -8,7 +8,7 @@ footer {
         padding-top: 10px;
         padding-bottom: 2em;
 
-        @include constraint-layout-landing-page();
+        @include constraint-layout();
     }
 
     .footer-details {
@@ -19,7 +19,7 @@ footer {
         display: flex;
         flex-direction: row;
 
-        @include constraint-layout-landing-page();
+        @include constraint-layout();
 
         @include media(tablet) {
             padding: 0 3em 3em 3em;
@@ -88,7 +88,7 @@ footer {
 
         .footnote {
             @include align-justify-center();
-            @include constraint-layout-landing-page();
+            @include constraint-layout();
 
             @include media(tablet) {
                 flex-direction: column;

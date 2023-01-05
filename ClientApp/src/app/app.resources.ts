@@ -34,7 +34,7 @@ export const AppContent = Object.freeze({
         }
     ],
     WebDashboardContent: {
-        title: 'Web Dashboard for LGU and Merchants',
+        title: 'Web Dashboard for\n LGU and Merchants',
         features: [
             {
                 key: 'Real-Time Analytics',

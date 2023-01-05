@@ -1,0 +1,54 @@
+@import '../../../../variables.scss';
+
+.benefits-section {
+    @include constraint-layout();
+
+    margin-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+
+    h2 {
+        font-weight: 800;
+        margin-bottom: 2em;
+
+        color: $gapp-red-color;
+    }
+
+    .benefit-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+
+        text-align: center;
+
+        @include media(tablet) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            margin: 0 auto;
+            color: white;
+            @include align-items-center();
+
+            border: 5px solid white;
+            box-shadow: 0 0 8px rgb(222, 222, 222);
+
+            mat-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 40px;
+            }
+        }
+
+        .benefit-title > h3 {
+            margin-top: 1em;
+            font-weight: 700;
+            white-space: pre-line;
+
+            color: $gapp-red-color;
+        }
+    }
+}

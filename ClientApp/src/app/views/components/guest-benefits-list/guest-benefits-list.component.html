@@ -1,0 +1,13 @@
+<div class="benefits-section">
+    <h2><b>Benefits</b></h2>
+
+    <div class="benefit-container">
+        <div class="benefit" *ngFor="let benefit of content.Benefits">
+            <div class="benefit-icon" [style.background-color]="benefit.color">
+                <mat-icon>{{benefit.icon}}</mat-icon>
+            </div>
+            <div class="benefit-title"><h3>{{benefit.key}}</h3></div>
+            <div class="benefit-description">{{benefit.description}}</div>
+        </div>
+    </div>
+</div>

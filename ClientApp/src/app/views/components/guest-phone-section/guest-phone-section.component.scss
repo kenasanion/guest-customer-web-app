@@ -1,0 +1,44 @@
+@import '../../../../variables.scss';
+
+.phone-section {
+    @include align-items-center();
+
+    @include media(tablet) {
+        margin-bottom: 2em;
+    }
+
+    .phones {
+        position: relative;
+        min-height: 400px;
+        width: 500px;
+        .left-phone {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            height: 80%;
+            width: 40%;
+            background-image: url('../../../../assets/images/9.1.1\ -\ Home\ -\ City\ of\ Manila.png');
+            @include image-fit();
+        }
+
+        .center-phone {
+            position: absolute;
+            left: 25%;
+            margin: 0 auto;
+            height: 100%;
+            width: 50%;
+            background-image: url('../../../../assets/images/1.1.1\ -\ Welcome\ Screen.png');
+            @include image-fit();
+        }
+
+        .right-phone {
+            position: absolute;
+            top: 10%;
+            right: 0;
+            height: 80%;
+            width: 40%;
+            background-image: url('../../../../assets/images/Resort\ House.png');
+            @include image-fit();
+        }
+    }
+}
