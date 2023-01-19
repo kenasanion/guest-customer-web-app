@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://localhost:4200'
+  baseUrl: 'https://localhost:4200',
+  apiUrl: 'https://localhost:44437',
+  recaptcha: {
+    siteKey: '6Lfq7AokAAAAAKs5kpuoP9ZVf_frb0z0Mw8klRNz',
+  },
 };
 
 /*

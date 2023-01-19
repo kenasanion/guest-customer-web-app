@@ -109,3 +109,8 @@ body {
 .main-container {
   height: 100%;
 }
+
+/* GAPP Stylesheets */
+
+/* For control-level stylesheets, override everything here. */
+@import 'styles/dashboard-styles.scss';

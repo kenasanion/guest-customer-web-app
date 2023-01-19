@@ -1,0 +1,2 @@
+<re-captcha name="recaptcha" #recaptcha="ngModel" [(ngModel)]="currentToken" (ngModelChange)="onChange($event)" required [class.is-invalid]="invalid && (dirty || touched)">
+</re-captcha>

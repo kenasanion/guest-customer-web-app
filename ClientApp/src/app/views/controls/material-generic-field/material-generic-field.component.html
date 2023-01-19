@@ -1,0 +1,19 @@
+<extended-recaptcha-control [id]="id" *ngIf="control && control?.formType === FormType.Recaptcha" [formControl]="control"></extended-recaptcha-control>
+
+<div *ngIf="control?.formType !== FormType.Recaptcha">
+    <div class="dashboard-form-field" *ngIf="control">
+        <label [htmlFor]="id">
+            <div>
+                {{control.displayName}}
+                <span class="required-indicator" *ngIf="control.required"> *</span>
+            </div>
+            <div *ngIf="control?.invalid && control?.errors && control?.touched" class="dashboard-form-field-error">
+                {{getControlErrors()}}
+            </div>
+        </label>
+        <mat-form-field *ngIf="control.inputType.length > 0" appearance="outline">
+            <input [id]="id" *ngIf="isPlainTypeControl()" type="{{control.inputType}}" [required]="required" [formControl]="control" matInput>
+        </mat-form-field>
+    </div>
+</div>
+

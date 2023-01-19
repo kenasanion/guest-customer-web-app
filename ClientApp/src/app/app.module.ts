@@ -13,6 +13,9 @@ import { FooterComponent } from './views/controls/footer/footer.component';
 import { BenefitsListComponent } from './views/components/guest-benefits-list/guest-benefits-list.component';
 import { GuestDashboardSectionComponent } from './views/components/guest-dashboard-section/guest-dashboard-section.component';
 import { GuestPhoneSectionComponent } from './views/components/guest-phone-section/guest-phone-section.component';
+import { ResetPasswordPage } from './views/pages/reset-password/reset-password.page';
+import { VerifyEmailPage } from './views/pages/verify-email/verify-email.page';
+import { RecaptchaSettings, RECAPTCHA_SETTINGS } from 'ng-recaptcha';
 
 export function getToken() {
   return localStorage.getItem('jwt');
@@ -30,6 +33,9 @@ export function getToken() {
     GuestPhoneSectionComponent,
     BenefitsListComponent,
     GuestDashboardSectionComponent,
+
+    VerifyEmailPage,
+    ResetPasswordPage,
   ],
   imports: [
     GAPPSharedModule,
@@ -49,7 +55,13 @@ export function getToken() {
     }),
   ],
   providers: [
-    JwtHelperService
+    JwtHelperService,
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKey,
+      } as RecaptchaSettings,
+    },
   ],
   bootstrap: [AppComponent]
 })

@@ -34,9 +34,14 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ToastrService } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
+import { ExtendedRecaptchaComponent } from './views/shared/recaptcha/recaptcha.component';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+import { MaterialGenericFieldComponent } from './views/controls/material-generic-field/material-generic-field.component';
 
 @NgModule({
   declarations: [
+    ExtendedRecaptchaComponent,
+    MaterialGenericFieldComponent,
   ],
   exports: [
     DatePipe,
@@ -80,6 +85,11 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
+    MaterialGenericFieldComponent,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    ExtendedRecaptchaComponent,
   ],
   imports: [
     IsLoadingDirectiveModule,
@@ -119,6 +129,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
   providers: [
     IsLoadingService,

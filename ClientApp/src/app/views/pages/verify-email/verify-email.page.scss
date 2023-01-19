@@ -1,0 +1,33 @@
+@import '../../../../variables.scss';
+
+#verify-email-page {
+    height: 100%;
+
+    @include page-padding();
+    @include align-items-center(column);
+
+    .brand-logo {
+        background-image: url('../../../../assets/images/gapp-logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+    }
+
+    .verify-email-panel {
+        @include panel-shadow();
+        @include card-padding();
+
+        max-width: 600px;
+    }
+
+    .footnote {
+        color: rgb(160, 160, 160);
+        margin-top: 2em;
+        font-size: 14px;
+        text-align: left;
+        max-width: 600px;
+    }
+}

@@ -1,0 +1,31 @@
+export enum FormType {
+    Default = "Default",
+    PrimaryKey = "Primary Key",
+    ForeignKey  = "Foreign Key",
+    UserName = "Username", // 256 Max Length
+    Password = "Password",
+    Name = "Name",
+    Email = "Email", // 320
+    Gender = "Gender", // 100 Max Length
+    Type = "Type", // 50 Max Length
+    GroupCategory  = "Group Category", // 100 Max Length
+    MultiGroupCategory  = "Multi-Group Category", // 100 Max Length
+    Array  = "Array", // 100 Max Length
+    ShortText = "Short Text", // 150 Max Length
+    LongText = "Long Text",
+    ShortCode = "Short Code", // 20 Max Length
+    ContactNumber = "Contact Number", // 20 Max Length
+    Number = "Number",
+    Currency = "Currency",
+    Address = "Address",
+    Date = "Date",
+    Boolean = "Boolean",
+    Enum = "Enum",
+    File = "File",
+    Image = "Image",
+    Album = "Album",
+    OperatingHours = "OperatingHours",
+    SingleLookup = "SingleLookup",
+    MultiLookup = "MultiLookup",
+    Recaptcha = "Recaptcha",
+}

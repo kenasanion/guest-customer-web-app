@@ -1,0 +1,42 @@
+<div id="verify-email-page">
+    <div class="brand-logo"></div>
+    <div class="verify-email-panel" *ngIf="!isConfirmingEmail">
+        <form id="send-verify-email-form" [formGroup]="sendVerifyEmailForm" (ngSubmit)="sendVerificationEmail()">
+            <h1>Resend Email Verification</h1>
+
+            <div *ngIf="!isSendConfirmEmailSuccess">
+                <p *ngIf="!isSendConfirmEmailSuccess">You are in this page because you want to resend a verification email for your GUEST account. Please enter the email you wish to send the email recovery link.</p>
+
+                <mat-generic-field formControlName="recoveryEmail"></mat-generic-field>
+                <mat-generic-field formControlName="recaptcha"></mat-generic-field>
+
+                <button mat-flat-button color="primary" class="mt-2" [disabled]="!sendVerifyEmailForm.valid || isLoading" type="submit">Resend Verification Email</button>
+            </div>
+
+            <div *ngIf="isSendConfirmEmailSuccess">
+                <p>An email from GUEST team (admin@guestapp.ph) was sent to {{recoveryEmail.value}}.</p>
+                <button mat-flat-button color="primary" (click)="goToHome()">Go To Guest Portal</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="verify-email-panel" *ngIf="isConfirmingEmail">
+        <h1>Verify Email</h1>
+
+        <div *ngIf="isConfirmEmailSuccess === undefined">
+            <p>Please wait while we verify your email for {{recoveryEmail.value}}.</p>
+        </div>
+
+        <div *ngIf="isConfirmEmailSuccess === true">
+            <p>You successfully verified your email. You may now login to GUEST.</p>
+            <button mat-flat-button color="primary" (click)="goToHome()">Go To Guest Portal</button>
+        </div>
+
+        <div *ngIf="isConfirmEmailSuccess === false">
+            <p>Failed to verify your email. Please try again later or contact support.</p>
+            <button mat-flat-button color="primary" (click)="goToHome()">Go To Guest Portal</button>
+        </div>
+    </div>
+
+    <p class="footnote">© 2023 - GUEST Travel App. This form will not collect any email. If an account doesn't exist in our records, our servers will ignore your request and will not send any email. In addition, kindly check for your junk or spam folder.</p>
+</div>
